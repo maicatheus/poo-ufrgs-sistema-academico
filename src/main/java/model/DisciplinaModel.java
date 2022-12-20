@@ -17,12 +17,11 @@ public class DisciplinaModel implements Comparable<DisciplinaModel>{
     public DisciplinaModel(){
     };
 
-    public DisciplinaModel(String codigo, String nome, Integer creditos, CursoModel curso) {
+    public DisciplinaModel(String codigo, String nome, Integer creditos) {
         this.codigo = codigo;
         this.nome = nome;
         this.creditos = creditos;
         setCargaHoraria(creditos);
-        setCursos(curso);
     }
 
     public String getCodigo() {

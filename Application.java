@@ -13,6 +13,8 @@ public class Application {
         List<CursoModel> cursos = new ArrayList<>();
         List<DisciplinaModel> disciplinas = new ArrayList<>();
 
+
+
         Integer opc;
 
         Scanner sc = new Scanner(System.in);
@@ -34,16 +36,17 @@ public class Application {
         opc = sc.nextInt();
         sc.nextLine();
         switch (opc){
-            case 1:
+            case 1: {
                 System.out.print("Nome do Curso: ");
                 nome = sc.nextLine();
                 cursos.add(new CursoModel(nome));
                 break;
-            case 2:
+            }
+            case 2: {
                 System.out.print("Codigo da Disciplina: ");
                 codigoDisciplina = sc.nextLine();
-                for(DisciplinaModel disciplina: disciplinas){
-                    if(codigoDisciplina == disciplina.getCodigo()){
+                for (DisciplinaModel disciplina : disciplinas) {
+                    if (codigoDisciplina == disciplina.getCodigo()) {
                         System.out.println("Disciplina ja cadastrada!");
                         return;
                     }
@@ -54,18 +57,18 @@ public class Application {
                 numeroCreditos = sc.nextInt();
                 disciplinas.add(new DisciplinaModel(codigoDisciplina, nome, numeroCreditos));
                 break;
-            case 3:
-
+            }
+            case 3: {
                 System.out.println("DISCIPLINAS: ");
-                for(int i=0; i<=disciplinas.size() ; i++){
-                    System.out.println("[" + (i+1) + "]" + " - "  + disciplinas.get(i).getCodigo());
+                for (int i = 0; i <= disciplinas.size(); i++) {
+                    System.out.println("[" + (i + 1) + "]" + " - " + disciplinas.get(i).getCodigo());
                 }
                 System.out.print("Qual disciplina deseja ofertar: ");
                 opcDisciplina = sc.nextInt();
 
                 System.out.print("CURSOS: ");
-                for(int i=0; i<=cursos.size() ; i++){
-                    System.out.println("[" + (i+1) + "]" + " - "  + cursos.get(i).getNome());
+                for (int i = 0; i <= cursos.size(); i++) {
+                    System.out.println("[" + (i + 1) + "]" + " - " + cursos.get(i).getNome());
                 }
 
                 System.out.print("Para qual curso deseja ofertar: ");
@@ -79,7 +82,7 @@ public class Application {
                 System.out.print("opcao de carater: ");
                 opcCarater = sc.nextInt();
 
-                switch (opcCarater){
+                switch (opcCarater) {
                     case 1:
                         carater = CaraterEnum.OBRIGATORIO;
                         break;
@@ -94,12 +97,30 @@ public class Application {
                 System.out.print("Etapa oferecida: ");
                 etapaOferecida = sc.nextInt();
 
-                cursos.get(opcCurso-1).oferecerDisciplina(
-                                        disciplinas.get(opcDisciplina-1),
-                                        carater,
-                                        etapaOferecida
+                cursos.get(opcCurso - 1).oferecerDisciplina(
+                        disciplinas.get(opcDisciplina - 1),
+                        carater,
+                        etapaOferecida
                 );
 
+                break;
+            }
+            case 4:{
+                System.out.println("DISCIPLINAS: ");
+                for (int i = 0; i <= disciplinas.size(); i++) {
+                    System.out.println("[" + (i + 1) + "]" + " - " + disciplinas.get(i).getCodigo());
+                }
+                System.out.print("Qual disciplina deseja excluir a oferta: ");
+                opcDisciplina = sc.nextInt();
+
+                for(int i = 0; i <= disciplinas.get(opcDisciplina-1).getCursos().size(); i++){
+                    System.out.println("[" + (i + 1) + "]" + " - " + disciplinas.get(opcDisciplina-1).getCursos().get(i).getNome());
+                }
+                System.out.print("Qual curso deseja excluir a oferta da disciplina: ");
+                opcCurso = sc.nextInt();
+                disciplinas.get(opcDisciplina-1).getCursos().get(opcCurso-1).excluirDisciplina(disciplinas.get(opcDisciplina-1));
+                break;
+            }
 
 
         }

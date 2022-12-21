@@ -27,9 +27,13 @@ public class CurriculoModel {
         disciplina.removerCurso(curso);
         this.disciplinas.remove(disciplina);
     }
+    public void setDisciplinas(DisciplinaModel disciplina) {
+        this.disciplinas.add(disciplina);
+    }
 
     public List<DisciplinaModel> listarDisciplinasPorEtapa() {
         Collections.sort(disciplinas);
         return disciplinas;
     }
+
 }

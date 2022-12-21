@@ -17,6 +17,30 @@ public class CursoModel {
         this.nome = nome;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public CurriculoModel getCurriculo() {
+        return curriculo;
+    }
+
+    public HabilitacaoModel getHabilitacao() {
+        return habilitacao;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCurriculo(CurriculoModel curriculo) {
+        this.curriculo = curriculo;
+    }
+
+    public void setHabilitacao(HabilitacaoModel habilitacao) {
+        this.habilitacao = habilitacao;
+    }
+
     public void oferecerDisciplina(DisciplinaModel disciplina, CaraterEnum carater, Integer oferecida){
         curriculo.setDisciplinas(disciplina,carater,oferecida, this );
     }

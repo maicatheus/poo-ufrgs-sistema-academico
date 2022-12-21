@@ -30,12 +30,18 @@ public class Application {
         Integer opcCarater;
         Integer etapaOferecida;
         CaraterEnum carater = null;
+
+        Boolean cadastrada = false;
+
         Boolean continuar = true;
+
         while (continuar) {
             menu.menuInicial();
             System.out.print("Escolha uma opcao: ");
             opc = sc.nextInt();
             sc.nextLine();
+
+            cadastrada = false;
             switch (opc) {
                 case 1: {
                     System.out.print("Nome do Curso: ");
@@ -47,10 +53,13 @@ public class Application {
                     System.out.print("Codigo da Disciplina: ");
                     codigoDisciplina = sc.nextLine();
                     for (DisciplinaModel disciplina : disciplinas) {
-                        if (codigoDisciplina == disciplina.getCodigo()) {
+                        if (codigoDisciplina.equals(disciplina.getCodigo())) {
                             System.out.println("Disciplina ja cadastrada!");
-                            return;
+                            cadastrada = true;
                         }
+                    }
+                    if(cadastrada){
+                        break;
                     }
                     System.out.print("Nome da disciplina: ");
                     nome = sc.nextLine();

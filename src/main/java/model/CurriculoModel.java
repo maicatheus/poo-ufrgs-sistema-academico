@@ -16,6 +16,14 @@ public class CurriculoModel {
         return disciplinas;
     }
 
+    public Integer etapaDisciplinaOferecida(DisciplinaModel outraDisciplina){
+        for(DisciplinaModel disciplina: this.disciplinas){
+            if(disciplina.getCodigo().equals(outraDisciplina.getCodigo())){
+                return disciplina.getOferecida();
+            }
+        }
+        return 0;
+    }
     public void setDisciplinas(DisciplinaModel disciplina, CaraterEnum caraterEnum, Integer oferecida, CursoModel curso) {
         disciplina.setCarater(caraterEnum);
         disciplina.setOferecida(oferecida);

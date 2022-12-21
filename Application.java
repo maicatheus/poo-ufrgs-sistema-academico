@@ -141,6 +141,19 @@ public class Application {
                 }
                 break;
             }
+            case 7:{
+                System.out.println("DISCIPLINAS: ");
+                for (int i = 0; i <= disciplinas.size(); i++) {
+                    System.out.println("[" + (i + 1) + "]" + " - " + disciplinas.get(i).getCodigo());
+                }
+                System.out.print("Qual disciplina deseja listar as ofertas: ");
+                opcDisciplina = sc.nextInt();
+
+                for(CursoModel curso: disciplinas.get(opcDisciplina-1).getCursos()){
+                    System.out.println("Curso: " + curso.getNome() + " - Oferecida: semestre " + curso.getCurriculo().etapaDisciplinaOferecida(disciplinas.get(opcDisciplina-1)) );
+                }
+                break;
+            }
         }
 
 

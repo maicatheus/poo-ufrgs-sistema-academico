@@ -14,6 +14,7 @@ public class Menu {
         System.out.println("[5] - Listar os cursos");
         System.out.println("[6] - Listar o curriculo de um curso, agrupando as disciplinas de cada etapa");
         System.out.println("[7] - Listar todas as ofertas de uma disciplina");
+        System.out.println("[0] - Sair");
     }
 
 

@@ -127,7 +127,19 @@ public class Application {
                     System.out.println(curso.getNome());
                 }
             }
+            case 6:{
+                System.out.print("CURSOS: ");
+                for (int i = 0; i <= cursos.size(); i++) {
+                    System.out.println("[" + (i + 1) + "]" + " - " + cursos.get(i).getNome());
+                }
 
+                System.out.print("Qual curso deseja listar o currículo: ");
+                opcCurso = sc.nextInt();
+                for(DisciplinaModel disciplina :cursos.get(opcCurso-1).getCurriculo().listarDisciplinasPorEtapa()){
+                    System.out.println("Etapa: " + disciplina.getOferecida() + " - nome: " + disciplina.getNome() + " - carater: " + disciplina.getCarater());
+                }
+                break;
+            }
         }
 
 

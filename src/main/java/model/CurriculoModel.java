@@ -2,6 +2,7 @@ package src.main.java.model;
 
 import src.main.java.enums.CaraterEnum;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class CurriculoModel {
     private List<DisciplinaModel> disciplinas;
 
     public CurriculoModel() {
+        this.disciplinas = new ArrayList<>();
     }
 
     public List<DisciplinaModel> getDisciplinas() {

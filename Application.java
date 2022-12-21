@@ -70,14 +70,14 @@ public class Application {
                 }
                 case 3: {
                     System.out.println("DISCIPLINAS: ");
-                    for (int i = 0; i <= disciplinas.size(); i++) {
+                    for (int i = 0; i < disciplinas.size(); i++) {
                         System.out.println("[" + (i + 1) + "]" + " - " + disciplinas.get(i).getCodigo());
                     }
                     System.out.print("Qual disciplina deseja ofertar: ");
                     opcDisciplina = sc.nextInt();
 
-                    System.out.print("CURSOS: ");
-                    for (int i = 0; i <= cursos.size(); i++) {
+                    System.out.println("CURSOS: ");
+                    for (int i = 0; i < cursos.size(); i++) {
                         System.out.println("[" + (i + 1) + "]" + " - " + cursos.get(i).getNome());
                     }
 

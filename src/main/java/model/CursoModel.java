@@ -15,6 +15,8 @@ public class CursoModel {
 
     public CursoModel(String nome) {
         this.nome = nome;
+        curriculo = new CurriculoModel();
+        habilitacao = new HabilitacaoModel();
     }
 
     public String getNome() {

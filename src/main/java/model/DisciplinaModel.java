@@ -2,6 +2,7 @@ package src.main.java.model;
 
 import src.main.java.enums.CaraterEnum;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DisciplinaModel implements Comparable<DisciplinaModel>{
@@ -18,6 +19,7 @@ public class DisciplinaModel implements Comparable<DisciplinaModel>{
     };
 
     public DisciplinaModel(String codigo, String nome, Integer creditos) {
+        this.cursos = new ArrayList<>();
         this.codigo = codigo;
         this.nome = nome;
         this.creditos = creditos;

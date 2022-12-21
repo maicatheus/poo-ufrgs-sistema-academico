@@ -121,7 +121,12 @@ public class Application {
                 disciplinas.get(opcDisciplina-1).getCursos().get(opcCurso-1).excluirDisciplina(disciplinas.get(opcDisciplina-1));
                 break;
             }
-
+            case 5:{
+                System.out.println("Cursos oferecidos: ");
+                for(CursoModel curso: cursos){
+                    System.out.println(curso.getNome());
+                }
+            }
 
         }
 

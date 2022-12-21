@@ -126,6 +126,7 @@ public class Application {
                 for(CursoModel curso: cursos){
                     System.out.println(curso.getNome());
                 }
+                break;
             }
             case 6:{
                 System.out.print("CURSOS: ");

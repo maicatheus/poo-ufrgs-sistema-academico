@@ -117,13 +117,13 @@ public class Application {
                 }
                 case 4: {
                     System.out.println("DISCIPLINAS: ");
-                    for (int i = 0; i <= disciplinas.size(); i++) {
+                    for (int i = 0; i < disciplinas.size(); i++) {
                         System.out.println("[" + (i + 1) + "]" + " - " + disciplinas.get(i).getCodigo());
                     }
                     System.out.print("Qual disciplina deseja excluir a oferta: ");
                     opcDisciplina = sc.nextInt();
 
-                    for (int i = 0; i <= disciplinas.get(opcDisciplina - 1).getCursos().size(); i++) {
+                    for (int i = 0; i < disciplinas.get(opcDisciplina - 1).getCursos().size(); i++) {
                         System.out.println("[" + (i + 1) + "]" + " - " + disciplinas.get(opcDisciplina - 1).getCursos().get(i).getNome());
                     }
                     System.out.print("Qual curso deseja excluir a oferta da disciplina: ");

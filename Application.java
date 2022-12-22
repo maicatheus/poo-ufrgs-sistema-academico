@@ -34,6 +34,7 @@ public class Application {
         Boolean cadastrada = false;
 
         Boolean continuar = true;
+        Boolean foiOferecida = false;
 
         while (continuar) {
             menu.menuInicial();
@@ -41,7 +42,10 @@ public class Application {
             opc = sc.nextInt();
             sc.nextLine();
 
+
+            foiOferecida = false;
             cadastrada = false;
+
             switch (opc) {
                 case 1: {
                     System.out.print("Nome do Curso: ");
@@ -83,6 +87,18 @@ public class Application {
 
                     System.out.print("Para qual curso deseja ofertar: ");
                     opcCurso = sc.nextInt();
+
+                    for(DisciplinaModel disciplina: cursos.get(opcCurso-1).getCurriculo().getDisciplinas()){
+                        if(disciplina.getCodigo().equals(disciplinas.get(opcDisciplina-1).getCodigo())){
+                            System.out.println("Esta disciplina já foi oferecida!");
+                            foiOferecida = true;
+                            break;
+                        }
+                    }
+
+                    if(foiOferecida){
+                        break;
+                    }
 
                     System.out.println("Carater da disciplina: ");
                     System.out.println("[1] - Obrigatorio ");

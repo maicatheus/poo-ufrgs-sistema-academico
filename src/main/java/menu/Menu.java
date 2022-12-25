@@ -6,6 +6,10 @@ public class Menu {
     public Menu() {
     }
     public void menuInicial(){
+
+
+
+
         System.out.println("=-=-=-=-=-=-=-= Menu Inicial =-=-=-=-=-=-=-=");
         System.out.println("[1] - Cadastrar um curso");
         System.out.println("[2] - Cadastrar uma disciplina");
